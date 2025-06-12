@@ -6,7 +6,18 @@ The app currently relies on you running it from the root directory instead of th
 ## Building
 Use the included CMakeLists.txt file. There are currently no dependencies.
 
-``` cmake -B build -G <your generator> ```
+``` cmake -B build -G <your generator> ```<br>
 ``` cmake --build /build ```
+
+
+### Usage
+
+Running the application without any flags will display any todos you currently have saved.
+
+``` -a ``` To add a new todo
+``` -r <title> ``` To remove a todo
+``` -f ``` To mark a todo as finished
+``` -c ``` To clear all todos
+``` -h ``` To list commands
 
 

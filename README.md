@@ -14,9 +14,9 @@ Use the included CMakeLists.txt file. There are currently no dependencies.
 
 Running the application without any flags will display any todos you currently have saved.<br>
 
-``` -a ``` To add a new todo<br>
+``` -a <title> <description>``` To add a new todo<br>
 ``` -r <title> ``` To remove a todo<br>
-``` -f ``` To mark a todo as finished<br>
+``` -f <title> ``` To mark a todo as finished<br>
 ``` -c ``` To clear all todos<br>
 ``` -h ``` To list commands<br>
 

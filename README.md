@@ -12,12 +12,12 @@ Use the included CMakeLists.txt file. There are currently no dependencies.
 
 ### Usage
 
-Running the application without any flags will display any todos you currently have saved.
+Running the application without any flags will display any todos you currently have saved.<br>
 
-``` -a ``` To add a new todo
-``` -r <title> ``` To remove a todo
-``` -f ``` To mark a todo as finished
-``` -c ``` To clear all todos
-``` -h ``` To list commands
+``` -a ``` To add a new todo<br>
+``` -r <title> ``` To remove a todo<br>
+``` -f ``` To mark a todo as finished<br>
+``` -c ``` To clear all todos<br>
+``` -h ``` To list commands<br>
 
 

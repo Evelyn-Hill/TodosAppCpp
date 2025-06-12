@@ -76,6 +76,7 @@ void FinishTodo(char** argv)
 
 void ClearTodos()
 {
+	g_todoFile->ClearFile();
 }
 
 

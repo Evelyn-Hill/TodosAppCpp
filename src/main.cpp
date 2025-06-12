@@ -1,28 +1,28 @@
 #include <iostream>
+#include <memory>
 #include <string>
 #include "TodoFile.hpp"
 
-#define LOG(x) std::cout << x << std::endl;
-#define ERR(x) std::cerr << x << std::endl;
+#define LOG(x) std::cout << x << std::endl
+#define ERR(x) std::cerr << x << std::endl
 
 void AddTodo(char** argv);
 void RemoveTodo(char** argv);
 void FinishTodo(char** argv);
 void ClearTodos();
 
+TodoFile* g_todoFile;
+
 int main(int argc, char** argv)
 {
-	TodoFile* todoFile = new TodoFile("Todos.txt");
+	g_todoFile = new TodoFile("Todos.txt");
 
 	if (argc <= 1)
 	{
-		LOG("Your Todos\n---------------------")
-		todoFile->ReadTodos();
-		for (Todo t : todoFile->GetTodos())
-		{
-			LOG(t.Title + " : " + t.Description);
-		}
+		g_todoFile->ReadTodos();
 
+		LOG("Your Todos\n---------------------");
+		g_todoFile->DisplayTodos();
 		return 0;
 	}
 	
@@ -59,6 +59,11 @@ int main(int argc, char** argv)
 
 void AddTodo(char** argv)
 {
+	std::string Title = (std::string)argv[2];
+	std::string Desc = (std::string)argv[3];
+	Todo t(Title, Desc);
+	g_todoFile->AddTrackedTodo(t);
+	g_todoFile->WriteTodos();
 }
 
 void RemoveTodo(char** argv)

@@ -12,11 +12,11 @@ void ClearTodos();
 
 int main(int argc, char** argv)
 {
-	TodoFile* todoFile = new TodoFile("Todo.txt");
+	TodoFile* todoFile = new TodoFile("Todos.txt");
 
 	if (argc <= 1)
 	{
-		LOG("Printing Todos");
+		LOG("Your Todos\n---------------------")
 		todoFile->ReadTodos();
 		for (Todo t : todoFile->GetTodos())
 		{

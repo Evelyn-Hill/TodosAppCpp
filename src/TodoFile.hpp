@@ -9,7 +9,7 @@ public:
 
   std::vector<Todo> ReadTodos();
   void WriteTodos();
-  void RemoveTodo(Todo todo);
+  void RemoveTodo(const char* title);
   void ClearFile();
   void DisplayTodos();
 

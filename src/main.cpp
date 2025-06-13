@@ -68,6 +68,7 @@ void AddTodo(char** argv)
 
 void RemoveTodo(char** argv)
 {
+	g_todoFile->RemoveTodo(argv[2]);
 }
 
 void FinishTodo(char** argv)

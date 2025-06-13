@@ -53,11 +53,10 @@ std::vector<Todo> TodoFile::ReadTodos() {
     c = inputBuffer->sbumpc();
   }
 	
+		
+	s_TrackedTodos.clear();
 
-	for (Todo t : toReturn)
-	{
-		s_TrackedTodos.push_back(t);
-	}
+	s_TrackedTodos = toReturn;
 
 	return s_TrackedTodos;
 }
@@ -80,7 +79,22 @@ void TodoFile::WriteTodos() {
 	is << EOF;
 }
 
-void TodoFile::RemoveTodo(Todo todo) {}
+void TodoFile::RemoveTodo(const char* title) {
+	if (m_TrackedTodos.size() == 0)
+	{
+		ReadTodos();
+	}
+	
+	for (int i = 0; i < m_TrackedTodos.size(); i++)
+	{
+		if (m_TrackedTodos[i].Title == title)
+		{
+			m_TrackedTodos.erase(m_TrackedTodos.begin() + i);
+		}
+	}
+
+	WriteTodos();
+}
 
 void TodoFile::DisplayTodos() {
   if (s_TrackedTodos.size() == 0) {
